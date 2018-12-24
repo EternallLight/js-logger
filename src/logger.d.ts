@@ -32,6 +32,11 @@ export interface ILogger {
      */
     getLevel(): ILogLevel;
 
+    /**
+     * Gets a list of registered logger names.
+     */
+    getNames() : String[];
+
     enabledFor(level: ILogLevel): boolean;
 }
 

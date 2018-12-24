@@ -68,7 +68,7 @@
 				this.context.filterLevel = newLevel;
 			}
 		},
-		
+
 		// Gets the current logging level for the logging instance
 		getLevel: function () {
 			return this.context.filterLevel;
@@ -166,6 +166,11 @@
 	Logger.getLevel = function() {
 		return globalLogger.getLevel();
 	};
+
+    // Get the list of registered logger names
+    Logger.getNames = function() {
+        return Object.keys(contextualLoggersByNameMap);
+    };
 
 	// Retrieve a ContextualLogger instance.  Note that named loggers automatically inherit the global logger's level,
 	// default context and log handler.
